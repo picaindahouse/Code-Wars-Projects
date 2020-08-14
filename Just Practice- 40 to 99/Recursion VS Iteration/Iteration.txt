@@ -1,0 +1,6 @@
+# Iteration
+
+- Iteration is basically repeating a task repeatedly but by using for/if/why functions instead
+- This is much faster than recursion and causes less problems
+- However, really big codes can take up quite a bit of space
+- If possible try to iterate a code instead of using recursion

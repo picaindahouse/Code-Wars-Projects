@@ -1,0 +1,34 @@
+# Recursion
+Stumbled upon the concept of recursion when I attempted to do the hackermann 6 kyu challenge. 
+Ended up failing quite badly but learn the idea of recursion.
+
+Recursion is used to repeat a loop again and again by using the function inside of itself:
+- Hard to explain it in words, easier to see through the code below:
+
+This is the code I created to solve side project 42, another 6 kyu side project.
+Basically, counts the number of elements inside a list and then the number if elements inside a list in the list and so on and so forth
+So - [1,2,3,[4,5,[6]]] has 8 elements in total
+
+def deepCount (tom):
+    if list in [type(x) for x in tom]:
+        return sum([deepCount(x) for x in tom if type(x) == list]) + len(tom)  
+                    # This is where the recursion occurs 
+    else:
+        return len(tom)
+
+Basically deepCount ([1,2,3,[4,5,[6]]])
+since list inside tom
+- return sum([deepCount(x) for for x in tom if type(x) == list]) + len (tom)
+= deepCount([4,5,[6]]) + 4
+= sum([deepCount([x) for for x in [4,5,[6]] if type(x) == list]) + len ([4,5,[6]]) + 4
+= deepCount([6]) + 3 + 4
+= len([6]) + 7
+= 8
+
+# This is a pretty simple example- but basically recursion allows you to repeat a task on a pretty huge scale
+# However, most of the time if you can use recursion to solve something- you can use iteration to solve the it as well
+# Iteration is faster than recursion and does not cause as many problems as recursion
+# This is because recursions can get quite huge- resulting in your code exceeding the recursion depth of your program and failing to run
+# However, recursion is still used as it is more intuitive and thus easier to use whereas one has to try to find 
+a link between the input and output to be able to get an iterative method to code
+# Will learn more about iteration next
